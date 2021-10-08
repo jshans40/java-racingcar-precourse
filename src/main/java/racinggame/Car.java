@@ -3,16 +3,13 @@ package racinggame;
 public class Car {
     private CarName carName;
     private int position;
-    private final int MOVE_CONDITION = 3;
 
     public Car(String carName) {
         this.carName = new CarName(carName);
     }
 
     public void tryMove(int number) {
-        if (number > MOVE_CONDITION) {
-            move(Movement.GO);
-        }
+        move(Movement.GoOrStop(number));
     }
 
     public void move(Movement movement) {

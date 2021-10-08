@@ -28,13 +28,13 @@ public class CarTest {
     @Test
     @DisplayName("자동차 이동 테스트")
     void 자동차_이동_테스트() {
-        car.move(Movement.GO);
+        car.move(Movement.GoOrStop(5));
         assertThat(car.getPosition()).isEqualTo(1);
-        car.move(Movement.GO);
+        car.move(Movement.GoOrStop(6));
         assertThat(car.getPosition()).isEqualTo(2);
-        car.move(Movement.GO);
+        car.move(Movement.GoOrStop(7));
         assertThat(car.getPosition()).isEqualTo(3);
-        car.move(Movement.STOP);
+        car.move(Movement.GoOrStop(3));
         assertThat(car.getPosition()).isEqualTo(3);
     }
 

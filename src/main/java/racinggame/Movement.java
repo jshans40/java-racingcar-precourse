@@ -5,6 +5,7 @@ public enum Movement {
     STOP(0);
 
     private final int move;
+    private static final int GO_CONDITION = 3;
 
     Movement(int move) {
         this.move = move;
@@ -12,5 +13,13 @@ public enum Movement {
 
     public int move() {
         return move;
+    }
+
+    public static Movement GoOrStop(int number) {
+        if (number > GO_CONDITION) {
+            return GO;
+        }
+
+        return STOP;
     }
 }
