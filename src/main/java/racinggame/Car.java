@@ -1,12 +1,12 @@
 package racinggame;
 
 public class Car {
-    private String carName;
+    private CarName carName;
     private int position;
     private final int MOVE_CONDITION = 3;
 
     public Car(String carName) {
-        this.carName = carName;
+        this.carName = new CarName(carName);
     }
 
     public void tryMove(int number) {
@@ -20,7 +20,7 @@ public class Car {
     }
 
     public String getCarName() {
-        return carName;
+        return carName.getName();
     }
 
 
