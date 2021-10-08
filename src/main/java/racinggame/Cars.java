@@ -6,14 +6,14 @@ import java.util.List;
 public class Cars {
     private final List<Car> cars;
 
-    public Cars(String[] inputCarNames) {
-        this.cars = mapCar(inputCarNames);
+    public Cars(String[] carNames) {
+        this.cars = createCars(carNames);
     }
 
-    private List<Car> mapCar(String[] inputCarNames) {
+    private List<Car> createCars(String[] carNames) {
         List<Car> cars = new ArrayList<>();
 
-        for (String carName : inputCarNames) {
+        for (String carName : carNames) {
             cars.add(new Car(carName));
         }
 

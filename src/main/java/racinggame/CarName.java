@@ -2,7 +2,7 @@ package racinggame;
 
 public class CarName {
     private final int MIN_CAR_NAME_LENGTH = 1;
-    private final int MAX_CAR_NAME_LENGTH = 2;
+    private final int MAX_CAR_NAME_LENGTH = 5;
 
     private String name;
 
