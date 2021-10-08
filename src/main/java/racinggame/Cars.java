@@ -5,9 +5,11 @@ import java.util.List;
 
 public class Cars {
     private final List<Car> cars;
+    private final Turn turn;
 
-    public Cars(String[] carNames) {
+    public Cars(String[] carNames, Turn turn) {
         this.cars = createCars(carNames);
+        this.turn = turn;
     }
 
     private List<Car> createCars(String[] carNames) {
@@ -19,6 +21,7 @@ public class Cars {
 
         return cars;
     }
+
 
     public List<Car> getCars() {
         return cars;

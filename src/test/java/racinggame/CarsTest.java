@@ -13,9 +13,10 @@ public class CarsTest {
     @DisplayName("자동차 리스트 생성 테스트")
     void 자동차_리스트_생성() {
         String[] carNames = {"hanca", "boa", "nob"};
-        Cars cars = new Cars(carNames);
+        Cars cars = new Cars(carNames, new Turn(5));
         for (int i=0; i<carNames.length; i++) {
             assertThat(cars.getCars().get(i).getCarName()).isEqualTo(carNames[i]);
         }
     }
+
 }
