@@ -7,7 +7,7 @@ public class CarName {
     private String name;
 
     public CarName(String carName) {
-        if (carName.length() < 1 || carName.length() > 5) {
+        if (carName.length() < MIN_CAR_NAME_LENGTH || carName.length() > MAX_CAR_NAME_LENGTH) {
             throw new IllegalArgumentException("차 이름은 5글자 이하여야 합니다.");
         }
 
