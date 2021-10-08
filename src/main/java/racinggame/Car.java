@@ -11,12 +11,12 @@ public class Car {
 
     public void tryMove(int number) {
         if (number > MOVE_CONDITION) {
-            move();
+            move(Movement.GO);
         }
     }
 
-    public void move() {
-        position += 1;
+    public void move(Movement movement) {
+        position += movement.move();
     }
 
     public String getCarName() {
