@@ -37,7 +37,7 @@ public class Cars {
 
     public void eachCarMove() {
         for (Car car : cars) {
-            car.move(Movement.GoOrStop(NumberGenerator.generateRandomNumberRangeZeroToNine()));
+            car.move(Movement.GoOrStop(numberGenerator.generateRandomNumberRangeZeroToNine()));
         }
     }
 

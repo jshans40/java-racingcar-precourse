@@ -1,8 +1,5 @@
 package racinggame;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class RacingController {
     private final InputView inputView;
     private final OutputView outputView;
