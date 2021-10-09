@@ -1,19 +1,21 @@
 package racinggame;
 
+import utils.NumberGenerator;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class Cars {
     private final List<Car> cars;
     private final Turn turn;
+    private final NumberGenerator numberGenerator;
     private List<Car> winnerCars = new ArrayList<>();
 
     public Cars(String[] carNames, Turn turn) {
         this.cars = createCars(carNames);
         this.turn = turn;
+        this.numberGenerator = new NumberGenerator();
     }
 
     private List<Car> createCars(String[] carNames) {
@@ -26,9 +28,10 @@ public class Cars {
         return cars;
     }
 
-
-    public List<Car> getCars() {
-        return cars;
+    public void race() {
+        for (Car car : cars) {
+            car.move(Movement.GoOrStop(NumberGenerator.generateRandomNumberRangeZeroToNine()));
+        }
     }
 
     public void winnerCars() {
@@ -53,4 +56,9 @@ public class Cars {
     public List<Car> getWinnerCars() {
         return winnerCars;
     }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
 }
