@@ -3,6 +3,7 @@ package racinggame;
 public class Car {
     private CarName carName;
     private int position;
+    private boolean isWinner;
 
     public Car(String carName) {
         this.carName = new CarName(carName);
@@ -23,5 +24,13 @@ public class Car {
 
     public int getPosition() {
         return this.position;
+    }
+
+    public boolean isWinner(int winnerPosition) {
+        if (position == winnerPosition) {
+            return true;
+        }
+
+        return false;
     }
 }
