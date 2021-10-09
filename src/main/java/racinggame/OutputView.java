@@ -39,7 +39,6 @@ public class OutputView {
         for (Car car : cars.getWinnerCars()) {
             winnerStringBuilder.append(car.getCarName()).append(",");
         }
-
         winnerStringBuilder.deleteCharAt(winnerStringBuilder.length() - 1);
         System.out.printf("최종 우승자는 %s 입니다.", winnerStringBuilder.toString());
     }

@@ -29,6 +29,13 @@ public class Cars {
     }
 
     public void race() {
+        for (int i=0; i<turn.getTurn(); i++) {
+            eachCarMove();
+        }
+        winnerCars();
+    }
+
+    public void eachCarMove() {
         for (Car car : cars) {
             car.move(Movement.GoOrStop(NumberGenerator.generateRandomNumberRangeZeroToNine()));
         }
