@@ -4,8 +4,8 @@ public class Car {
     private CarName carName;
     private int position;
 
-    public Car(String carName) {
-        this.carName = new CarName(carName);
+    public Car(CarName carName) {
+        this.carName = carName;
     }
 
     public void tryMove(int number) {

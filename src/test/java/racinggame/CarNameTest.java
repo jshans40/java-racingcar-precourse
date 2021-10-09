@@ -14,7 +14,7 @@ public class CarNameTest {
     @ValueSource(strings = {"sanghyuk", "test123", "testokkkod", "baedalminjokkorea", "maxmimumstringstestopoeewsxcxaqwed"})
     @DisplayName("자동차 이름 5글자 초과일때 테스트")
     void 자동차_이름_5글자_초과시(String inputs) {
-        assertThatIllegalArgumentException().isThrownBy(() -> new Car(inputs)).withMessage("차 이름은 5글자 이하여야 합니다.");
+        assertThatIllegalArgumentException().isThrownBy(() -> new Car(new CarName(inputs))).withMessage("차 이름은 5글자 이하여야 합니다.");
     }
 
     @ParameterizedTest

@@ -12,17 +12,18 @@ import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException
 
 public class CarTest {
     private Car car;
-    private final String carName = "hans";
+    private CarName carName;
 
     @BeforeEach
     void setUpCar() {
+        carName = new CarName("hans");
         car = new Car(carName);
     }
 
     @Test
     @DisplayName("자동차 이름 체크")
     void 자동차_이름_체크() {
-        assertThat(car.getCarName()).isEqualTo(carName);
+        assertThat(car.getCarName()).isEqualTo(carName.getName());
     }
 
     @Test

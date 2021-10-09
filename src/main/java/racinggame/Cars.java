@@ -12,16 +12,16 @@ public class Cars {
     private final NumberGenerator numberGenerator;
     private List<Car> winnerCars = new ArrayList<>();
 
-    public Cars(String[] carNames, Turn turn) {
+    public Cars(CarNames carNames, Turn turn) {
         this.cars = createCars(carNames);
         this.turn = turn;
         this.numberGenerator = new NumberGenerator();
     }
 
-    private List<Car> createCars(String[] carNames) {
+    private List<Car> createCars(CarNames carNames) {
         List<Car> cars = new ArrayList<>();
 
-        for (String carName : carNames) {
+        for (CarName carName : carNames.getCarNames()) {
             cars.add(new Car(carName));
         }
 
