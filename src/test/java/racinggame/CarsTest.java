@@ -2,6 +2,10 @@ package racinggame;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import racinggame.model.CarNames;
+import racinggame.model.Cars;
+import racinggame.model.Movement;
+import racinggame.model.Turn;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

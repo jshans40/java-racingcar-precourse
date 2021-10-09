@@ -1,4 +1,4 @@
-package racinggame;
+package racinggame.model;
 
 public class CarName {
     private final int MIN_CAR_NAME_LENGTH = 1;

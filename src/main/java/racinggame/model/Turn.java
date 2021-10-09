@@ -1,4 +1,4 @@
-package racinggame;
+package racinggame.model;
 
 public class Turn {
     private final int MINIMUM_TURN_COUNT = 1;

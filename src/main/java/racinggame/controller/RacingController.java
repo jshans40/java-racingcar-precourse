@@ -1,4 +1,10 @@
-package racinggame;
+package racinggame.controller;
+
+import racinggame.model.Turn;
+import racinggame.model.CarNames;
+import racinggame.model.Cars;
+import racinggame.view.InputView;
+import racinggame.view.OutputView;
 
 public class RacingController {
     private final InputView inputView;

@@ -1,4 +1,4 @@
-package racinggame;
+package racinggame.model;
 
 public enum Movement {
     GO(1),
