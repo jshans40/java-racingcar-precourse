@@ -1,6 +1,7 @@
 package racinggame;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -24,5 +25,22 @@ public class TurnTest {
     void 숫자_1이상일떄_성공(int number) {
         Turn turn = new Turn(number);
         assertThat(turn.getTurn()).isEqualTo(number);
+    }
+
+    @Test
+    @DisplayName("턴 사용 테스트")
+    void 턴_사용() {
+        Turn turn = new Turn(3);
+        turn.useTurn();
+        turn.useTurn();
+        assertThat(turn.getTurn()).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("턴이 1미만일떄 턴을 사용하면 에러 발생")
+    void 턴_에러_발생() {
+        Turn turn = new Turn(1);
+        turn.useTurn();
+        assertThatThrownBy(turn::useTurn).isInstanceOf(RuntimeException.class).hasMessage("횟수가 1보다 작기 때문에 턴을 사용할 수 없습니다.");
     }
 }
