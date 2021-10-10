@@ -30,15 +30,12 @@ public class RacingController {
     }
 
     private CarNames createCarNames() {
-        CarNames carNames = null;
         try {
-            carNames = new CarNames(inputView.carNamesInput());
+            return new CarNames(inputView.carNamesInput());
         } catch (IllegalArgumentException argumentException) {
             outputView.printError(argumentException.getMessage());
-            createCarNames();
+            return createCarNames();
         }
-
-        return carNames;
     }
 
     private Turn inputTurn() {
@@ -47,14 +44,14 @@ public class RacingController {
     }
 
     private Turn createTurn() {
-        Turn turn = null;
         try {
-            turn = new Turn(inputView.carTurnInput());
+            return new Turn(inputView.carTurnInput());
         } catch (NumberFormatException e) {
             outputView.printError("숫자만 입력 가능합니다.");
-            createTurn();
+            return createTurn();
+        } catch (IllegalArgumentException e) {
+            outputView.printError(e.getMessage());
+            return createTurn();
         }
-
-        return turn;
     }
 }

@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.*;
 public class TurnTest {
 
     @ParameterizedTest
-    @ValueSource(ints = {-1, -3, -5})
+    @ValueSource(ints = {-1, -3, -5, 0})
     @DisplayName("0이하일때 에러 발생")
     void 숫자_0이하일떄_에러_발생_테스트(int number) {
         assertThatIllegalArgumentException().isThrownBy(() -> new Turn(number)).withMessage("횟수는 1이상의 숫자여야 합니다.");
