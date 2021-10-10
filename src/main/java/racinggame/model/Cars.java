@@ -68,4 +68,7 @@ public class Cars {
         return cars;
     }
 
+    public Turn getTurn() {
+        return turn;
+    }
 }

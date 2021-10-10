@@ -8,6 +8,7 @@ public class OutputView {
     private final String CAR_TURN_INPUT_MESSAGE = "시도할 회수는 몇회인가요?";
     private final String GAME_ERROR_MESSAGE = "[ERROR] ";
     private final String RACE_RESULT = "실행 결과";
+    private final String LINE_BREAK = "\n";
 
     public void printInputNames() {
         System.out.println(CAR_NAMES_INPUT_MESSAGE);
@@ -22,7 +23,14 @@ public class OutputView {
     }
 
     public void printRaceResult(Cars cars) {
-        System.out.println(RACE_RESULT);
+        System.out.println(LINE_BREAK + RACE_RESULT);
+        for (int i=0; i<cars.getTurn().getTurn(); i++) {
+            printEachCarResult(cars);
+            System.out.print(LINE_BREAK);
+        }
+    }
+
+    private void printEachCarResult(Cars cars) {
         for (Car car : cars.getCars()) {
             System.out.println(car.getCarName() + " : " + printCarPosition(car.getPosition()));
         }
