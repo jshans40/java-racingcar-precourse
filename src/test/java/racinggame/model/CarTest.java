@@ -37,14 +37,4 @@ public class CarTest {
         car.move(Movement.GoOrStop(3));
         assertThat(car.getPosition()).isEqualTo(3);
     }
-
-    @Test
-    @DisplayName("입력값이 4이상이면 전진 3이하이면 멈춤")
-    void 자동차_전진_여부에_따라_이동값_변경() {
-        car.tryMove(4);
-        assertThat(car.getPosition()).isEqualTo(1);
-
-        car.tryMove(2);
-        assertThat(car.getPosition()).isEqualTo(1);
-    }
 }

@@ -8,10 +8,6 @@ public class Car {
         this.carName = carName;
     }
 
-    public void tryMove(int number) {
-        move(Movement.GoOrStop(number));
-    }
-
     public void move(Movement movement) {
         position += movement.move();
     }
